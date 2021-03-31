@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}

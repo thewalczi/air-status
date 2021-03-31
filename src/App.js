@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//components
+import Header from './components/Header.component';
+import Wrapper from './components/Wrapper.component';
+//contexts
+import CoordinatesContextProvider from './contexts/Coordinates.context';
+import InstallationsContextProvider from './contexts/Installations.context';
+import MapContextProvider from './contexts/Map.context';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InstallationsContextProvider>
+        <CoordinatesContextProvider>
+          <MapContextProvider>
+            <Header/>
+            <Wrapper/>
+          </MapContextProvider>
+        </CoordinatesContextProvider>
+      </InstallationsContextProvider>
     </div>
   );
 }
