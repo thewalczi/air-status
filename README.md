@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Before you run
+
+1. Open file `api.js` located in `src/utils`,
+2. Add your secret API key recived from https://developer.airly.org/
+
 ## Available Scripts
 
 In the project directory, you can run:
