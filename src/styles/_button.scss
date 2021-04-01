@@ -1,0 +1,19 @@
+.button {
+  height: $default__sizing--xl;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  margin-right: 16px;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $color__blue--500;
+    color: $color__blue--100;
+  }
+
+  &--secondary {
+    background-color: $color__blue--100;
+    color: $color__blue--500;
+  }
+}

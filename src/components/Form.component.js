@@ -17,22 +17,20 @@ const Form = (props) => {
 
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <section>
-                <label>
+            <section className="form__section">
+                <label className="form__label">
                     Latitude
-                    <input name="Latitude" type="number" value={latitude} onChange={(e) => setLatitude(e.target.value)}/>
                 </label>
+                <input className="form__input" name="Latitude" type="number" value={latitude} onChange={(e) => setLatitude(e.target.value)}/>
             </section>
-            <section>
-                <label htmlFor="lng">
+            <section className="form__section">
+                <label className="form__label">
                     Longitude
-                    <input name="Longitude" type="number" id="lng" value={longitude} onChange={(e) => setLongitude(e.target.value)}/>
                 </label>
+                <input className="form__input" name="Longitude" type="number" id="lng" value={longitude} onChange={(e) => setLongitude(e.target.value)}/>
             </section>
-            <section>
-                <button type="submit">Find</button>
-                <button onClick={handleClick}>Use my localization</button>
-            </section>
+                <button className="button button--primary" type="submit">Find</button>
+                <button className="button button--secondary" onClick={handleClick}>Use my localization</button>
         </form>
     );
 }
