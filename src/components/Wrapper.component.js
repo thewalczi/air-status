@@ -5,8 +5,7 @@ import Sidebar from './Sidebar.component';
 const Wrapper = (props) => {
     return (
         <div className="wrapper">
-            <Content/>
-            <Sidebar/>
+            {props.children}
         </div>
     );
 }
