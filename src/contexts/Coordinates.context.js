@@ -9,11 +9,7 @@ const CoordinatesContextProvider = (props) => {
     const [longitude, setLongitude] = useState('');
     const [currentPosition, setCurrentPosition] = useState();
 
-    //Center of Poland as a default location
-    const [defaultPosition, setDefaultPosition] = useState([
-        52.04,
-        19.28
-    ])
+ 
 
      const GetUserPosition = () => {
          console.log(currentPosition);
@@ -24,11 +20,7 @@ const CoordinatesContextProvider = (props) => {
             setLongitude(position.coords.longitude);
           });
      }
-
-    useEffect(() => {
-        setCurrentPosition(defaultPosition);
-    }, []);
-
+     
     return (
         <CoordinatesContext.Provider value ={{
             currentPosition,

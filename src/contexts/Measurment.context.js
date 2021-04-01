@@ -19,8 +19,8 @@ const MeasurmentContextProvider = (props) => {
     const GetMeasurment = () => {
         api.get(`v2/measurements/nearest`, {params})
         .then(res => {
-        console.log(res.data.current.values);
-        setMeasurment(res.data.current);
+            console.log(res.data.current.values);
+            setMeasurment(res.data.current);
         })
     }
 

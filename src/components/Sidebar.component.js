@@ -16,7 +16,10 @@ const Sidebar = (props) => {
                         </li>
                     )
                 })}
-            </ul> : null}
+            </ul> :
+            <div className="sidebar__placeholder">
+                    Set your localization to view data.
+            </div>}
         </div>
     );
 }

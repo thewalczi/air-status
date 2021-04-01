@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState} from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -19,12 +19,17 @@ const Map = (props) => {
     const { currentPosition } = useContext(CoordinatesContext);
     const { setMap } = useContext(MapContext);
 
+       //Center of Poland as a default location
+    const [defaultPosition, setDefaultPosition] = useState([
+        52.04,
+        19.28
+    ]);
+
     return (
         <div>
-            {currentPosition ? 
             <MapContainer 
-                center={currentPosition}
-                zoom={6}
+                center={currentPosition || defaultPosition}
+                zoom={7}
                 scrollWheelZoom={true}
                 whenCreated={setMap}
             >
@@ -32,9 +37,8 @@ const Map = (props) => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={currentPosition}>
-                </Marker>
-            </MapContainer> : null}
+                {currentPosition ? <Marker position={currentPosition}/> : null}
+            </MapContainer>
         </div>
     );
 }
