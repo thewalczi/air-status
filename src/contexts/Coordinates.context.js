@@ -16,8 +16,9 @@ const CoordinatesContextProvider = (props) => {
     ])
 
      const GetUserPosition = () => {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            console.log(position.coords);
+         console.log(currentPosition);
+         navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(currentPosition);
             setCurrentPosition([position.coords.latitude, position.coords.longitude]);
             setLatitude(position.coords.latitude);
             setLongitude(position.coords.longitude);

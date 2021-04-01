@@ -4,21 +4,21 @@ import Header from './components/Header.component';
 import Wrapper from './components/Wrapper.component';
 //contexts
 import CoordinatesContextProvider from './contexts/Coordinates.context';
-import InstallationsContextProvider from './contexts/Installations.context';
+import MeasurmentContextProvider from './contexts/Measurment.context';
 import MapContextProvider from './contexts/Map.context';
 
 const App = () => {
 
   return (
     <div className="App">
-      <InstallationsContextProvider>
-        <CoordinatesContextProvider>
+      <CoordinatesContextProvider>
+        <MeasurmentContextProvider>
           <MapContextProvider>
             <Header/>
             <Wrapper/>
           </MapContextProvider>
-        </CoordinatesContextProvider>
-      </InstallationsContextProvider>
+        </MeasurmentContextProvider>
+      </CoordinatesContextProvider>
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.sidebar {
+  border-left: 1px solid $color__blue--500;
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px 24px 16px 16px;
+
+    &-item {
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid $color__blue--100;
+      h5 {
+        padding: 0;
+        margin: 0;
+      }
+      p {
+        text-align: right;
+        margin: 0;
+      }
+    }
+  }
+}

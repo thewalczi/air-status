@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { CoordinatesContext } from '../contexts/Coordinates.context';
 
 const Form = (props) => {
 
     const { setCurrentPosition, GetUserPosition, latitude, setLatitude, longitude, setLongitude } = useContext(CoordinatesContext);
 
-    const handleSubmit = (e) => {
+    const formSubmit = (e) => {
         e.preventDefault();
         setCurrentPosition([+latitude, +longitude]);
     }
@@ -14,9 +14,8 @@ const Form = (props) => {
         GetUserPosition();
     }
 
-
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={formSubmit}>
             <section className="form__section">
                 <label className="form__label">
                     Latitude
